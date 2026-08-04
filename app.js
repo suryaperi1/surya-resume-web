@@ -2,7 +2,8 @@
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
   const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
 
-  function activateTab(tab) {
+  function activateTab(tab, options = {}) {
+    const { updateHash = true, scrollToPanel = true } = options;
     const targetId = tab.getAttribute('aria-controls');
 
     tabs.forEach((t) => {
@@ -12,25 +13,21 @@
       t.tabIndex = selected ? 0 : -1;
     });
 
-    /*panels.forEach((panel) => {
-      const visible = panel.id === targetId;
-      panel.classList.toggle('active', visible);
-      panel.hidden = !visible;
-    });*/
-
     panels.forEach((panel) => {
-    const isActive = panel.id === targetId;
-    panel.classList.toggle('active', isActive);
+      const isActive = panel.id === targetId;
+      panel.classList.toggle('active', isActive);
 
-    if (isActive) {
-      panel.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-      });
+      if (isActive && scrollToPanel) {
+        panel.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
     });
 
-    history.replaceState(null, '', `#${targetId}`);
+    if (updateHash) {
+      history.replaceState(null, '', `#${targetId}`);
+    }
   }
 
   function tabFromHash() {
@@ -58,5 +55,5 @@
   });
 
   window.addEventListener('hashchange', () => activateTab(tabFromHash()));
-  activateTab(tabFromHash());
+  activateTab(tabFromHash(), { updateHash: false, scrollToPanel: false });
 })();
