@@ -37,12 +37,12 @@
 
       <nav class="tab-nav" aria-label="Resume sections">
         <div class="tab-nav-inner" role="tablist">
-          <button class="tab-btn active" role="tab" id="tab-summary" aria-controls="panel-summary" aria-selected="true" type="button">Summary</button>
-          <button class="tab-btn" role="tab" id="tab-competencies" aria-controls="panel-competencies" aria-selected="false" tabindex="-1" type="button">Competencies</button>
-          <button class="tab-btn" role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1" type="button">Experience</button>
-          <button class="tab-btn" role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1" type="button">Skills</button>
-          <button class="tab-btn" role="tab" id="tab-domain" aria-controls="panel-domain" aria-selected="false" tabindex="-1" type="button">Domain</button>
-          <button class="tab-btn" role="tab" id="tab-education" aria-controls="panel-education" aria-selected="false" tabindex="-1" type="button">Education</button>
+          <button class="tab-btn" role="tab" id="tab-summary" aria-controls="panel-summary" aria-selected="true" type="button" onclick="document.getElementById('panel-summary').scrollIntoView({ behavior: 'smooth' })">Summary</button>
+          <button class="tab-btn" role="tab" id="tab-competencies" aria-controls="panel-competencies" aria-selected="false" tabindex="-1" type="button" onclick="document.getElementById('panel-competencies').scrollIntoView({ behavior: 'smooth' })">Competencies</button>
+          <button class="tab-btn" role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1" type="button" onclick="document.getElementById('panel-experience').scrollIntoView({ behavior: 'smooth' })">Experience</button>
+          <button class="tab-btn" role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1" type="button" onclick="document.getElementById('panel-skills').scrollIntoView({ behavior: 'smooth' })">Skills</button>
+          <button class="tab-btn" role="tab" id="tab-domain" aria-controls="panel-domain" aria-selected="false" tabindex="-1" type="button" onclick="document.getElementById('panel-domain').scrollIntoView({ behavior: 'smooth' })">Domain</button>
+          <button class="tab-btn" role="tab" id="tab-education" aria-controls="panel-education" aria-selected="false" tabindex="-1" type="button" onclick="document.getElementById('panel-education').scrollIntoView({ behavior: 'smooth' })">Education</button>
         </div>
       </nav>
 
@@ -222,6 +222,6 @@
       <a class="btn btn-secondary" href="resume.md" download>Download Markdown</a>
     </div>
   </div>
-  <script src="app.js"></script>
+ 
 </body>
 </html>
