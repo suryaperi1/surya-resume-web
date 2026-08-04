@@ -172,10 +172,13 @@ a:hover {
   border-radius: 4px 4px 0 0;
 }
 
-/* ===== Tab panels ===== */
+/* ===== Tab panels ===== 
 .tab-panel {
   display: none;
   animation: fadeIn 0.25s ease;
+}*/
+.tab-panel {
+  display: block;
 }
 
 .tab-panel.active {

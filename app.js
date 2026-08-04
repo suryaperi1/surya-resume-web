@@ -12,10 +12,22 @@
       t.tabIndex = selected ? 0 : -1;
     });
 
-    panels.forEach((panel) => {
+    /*panels.forEach((panel) => {
       const visible = panel.id === targetId;
       panel.classList.toggle('active', visible);
       panel.hidden = !visible;
+    });*/
+
+    panels.forEach((panel) => {
+    const isActive = panel.id === targetId;
+    panel.classList.toggle('active', isActive);
+
+    if (isActive) {
+      panel.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+      });
+      }
     });
 
     history.replaceState(null, '', `#${targetId}`);
