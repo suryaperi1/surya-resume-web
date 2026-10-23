@@ -1,3 +1,9 @@
+---
+tagline: Quality Engineering & DevSecOps Leader
+page_title: Surya Peri | Quality Engineering & DevSecOps
+meta_description: Surya Peri — Quality Engineering & DevSecOps professional specializing in test automation, SAST/DAST, and CI/CD transformation.
+---
+
 # Surya Peri
 
 **Sachse, TX, USA** · 469-446-2156 · suryaperi.n@gmail.com · [LinkedIn](https://www.linkedin.com/in/surya-peri-11444123/)

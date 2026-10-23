@@ -6,9 +6,40 @@ A static, professional resume webpage ready for free hosting on GitHub Pages, Ne
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Resume webpage |
+| `resume.md` | **Source of truth** — edit this file |
+| `generate.py` | Builds `index.html` from `resume.md` |
+| `index.template.html` | HTML shell (layout, tabs, styling hooks) |
+| `index.html` | Generated site (do not edit by hand) |
 | `styles.css` | Styling (responsive + print-friendly) |
-| `resume.md` | Markdown source of resume content |
+| `app.js` | Tab navigation |
+
+## Update workflow
+
+1. Edit **`resume.md`** only.
+2. Regenerate the site:
+
+   ```powershell
+   cd C:\Users\surya\OneDrive\Automation\surya-resume-web
+   python generate.py
+   ```
+
+   Or: `.\generate.ps1`
+
+3. Commit and push **both** `resume.md` and `index.html`:
+
+   ```powershell
+   git add resume.md index.html
+   git commit -m "Update resume content"
+   git push origin main
+   ```
+
+### `resume.md` conventions
+
+- Optional YAML at the top (`tagline`, `page_title`, `meta_description`).
+- Contact line under your name: `**City, ST** · phone · email · [LinkedIn](url)`.
+- Jobs: `### Company` then `**Role** · Start – End`, then bullet list.
+- Wrap a bullet in `**double asterisks**` to highlight it on the site (DevSecOps bullets).
+- Technical skills use a Markdown table (`Category` | `Technologies`).
 
 ## Local preview
 
